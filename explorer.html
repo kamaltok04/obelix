@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Explorer | OBELIX Blockchain AI Monitor</title>
+  <meta name="description" content="Real-time blockchain telemetry, smart contract tracker, and AI threat detection console on Robinhood Chain by OBELIX.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon">
+          <img src="assets/logo.svg" alt="OBELIX Logo" width="38" height="38">
+        </div>
+        <div>
+          <span class="brand-title">OBELIX</span>
+          <span class="brand-tagline">Robinhood Chain Explorer</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="explorer.html" class="nav-link active">Live Explorer</a></li>
+        <li><a href="agent.html" class="nav-link">AI Agent Studio</a></li>
+        <li><a href="ecosystem.html" class="nav-link">Ecosystem & SDK</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <span class="pulse-badge">
+          <span class="dot"></span> LIVE WEBSOCKET ACTIVE
+        </span>
+        <button class="hamburger" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Section -->
+  <section class="section" style="padding-top: 8.5rem;">
+    <div class="container">
+      <div class="flex-between" style="flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+        <div>
+          <div class="section-tag"><i class="fas fa-satellite-dish"></i> REAL-TIME MONITORING</div>
+          <h1 style="font-size: 2.5rem;">Robinhood Chain Explorer</h1>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">
+            Streaming live block events, contract calls, and AI risk anomaly diagnostics.
+          </p>
+        </div>
+
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <span class="pulse-badge" style="background: rgba(0, 229, 255, 0.1); border-color: var(--accent-cyan); color: var(--accent-cyan);">
+            <i class="fas fa-clock"></i> Block Time: 0.42s
+          </span>
+          <button class="btn btn-secondary" onclick="location.reload()" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+            <i class="fas fa-rotate"></i> Refresh Feed
+          </button>
+        </div>
+      </div>
+
+      <!-- Live Stats Header Cards -->
+      <div class="explorer-header-stats">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-list-check"></i></div>
+          <div>
+            <div class="stat-value" id="stat-total-events">1,428,590</div>
+            <div class="stat-label">Total Events Tracked</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon" style="color: var(--accent-cyan); background: rgba(0, 229, 255, 0.1);"><i class="fas fa-robot"></i></div>
+          <div>
+            <div class="stat-value" id="stat-active-agents">1,420</div>
+            <div class="stat-label">Active AI Agents</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon" style="color: #FFC107; background: rgba(255, 193, 7, 0.1);"><i class="fas fa-shield-halved"></i></div>
+          <div>
+            <div class="stat-value" style="color: #FFC107;">4 / 100</div>
+            <div class="stat-label">Network Threat Level (LOW)</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-bolt"></i></div>
+          <div>
+            <div class="stat-value">15,420</div>
+            <div class="stat-label">Current TPS</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-box">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="explorer-search" class="search-input" placeholder="Search by Tx Hash (0x...), Smart Contract Address, Wallet ID, or Event Type...">
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="ALL"><i class="fas fa-globe"></i> All Events</button>
+        <button class="filter-btn" data-filter="WALLETS"><i class="fas fa-wallet"></i> Wallets</button>
+        <button class="filter-btn" data-filter="DEFI"><i class="fas fa-chart-candlestick"></i> DeFi Protocols</button>
+        <button class="filter-btn" data-filter="SMART CONTRACTS"><i class="fas fa-code"></i> Smart Contracts</button>
+        <button class="filter-btn" data-filter="NFTS"><i class="fas fa-shapes"></i> NFT Collections</button>
+        <button class="filter-btn" data-filter="DAOS"><i class="fas fa-landmark"></i> DAOs</button>
+        <button class="filter-btn" data-filter="CROSS-CHAIN"><i class="fas fa-link"></i> Cross-Chain</button>
+      </div>
+
+      <!-- Live Stream Table Container -->
+      <div class="live-table-container">
+        <table class="live-table">
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>Tx Hash</th>
+              <th>Chain</th>
+              <th>Initiator</th>
+              <th>Event Summary</th>
+              <th>AI Risk Diagnostics</th>
+            </tr>
+          </thead>
+          <tbody id="live-stream-body">
+            <!-- Dynamically populated by explorer.js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 OBELIX AI Protocol. Robinhood Chain Explorer.</div>
+        <div style="display: flex; gap: 1rem;">
+          <a href="index.html" style="color: var(--accent-primary);">Home</a>
+          <a href="agent.html" style="color: var(--accent-primary);">AI Studio</a>
+          <a href="ecosystem.html" style="color: var(--accent-primary);">SDK Docs</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/explorer.js"></script>
+</body>
+</html>

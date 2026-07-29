@@ -1,0 +1,1195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OBELIX - Omni Blockchain Event & Ledger Intelligence eXplorer</title>
+    <meta
+      name="description"
+      content="OBELIX is an autonomous AI Agent Protocol built on Robinhood Chain, designed to monitor, analyze, and track every important event across the blockchain ecosystem in real time."
+    />
+
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/components.css" />
+  </head>
+
+  <body>
+    <!-- Ambient Grid & Particle Canvas Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- ==========================================
+       1. NAVBAR NAVIGATION
+       ========================================== -->
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="index.html" class="brand-logo">
+          <div class="logo-icon">
+            <img
+              src="assets/logo.svg"
+              alt="OBELIX Logo"
+              width="38"
+              height="38"
+            />
+          </div>
+          <div>
+            <span class="brand-title">OBELIX</span>
+            <span class="brand-tagline">Robinhood Chain Intelligence</span>
+          </div>
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="explorer.html" class="nav-link">Live Explorer</a></li>
+          <li><a href="agent.html" class="nav-link">AI Agent Studio</a></li>
+          <li><a href="ecosystem.html" class="nav-link">Ecosystem & SDK</a></li>
+        </ul>
+
+        <div class="nav-right">
+          <span class="pulse-badge" id="nav-network-status">
+            <span class="dot"></span> ROBINHOOD CHAIN
+          </span>
+          <a
+            href="explorer.html"
+            class="btn btn-primary"
+            style="padding: 0.6rem 1.2rem; font-size: 0.85rem"
+          >
+            Launch Console
+          </a>
+          <button class="hamburger" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ==========================================
+       2. HERO SECTION (Infographic Header)
+       ========================================== -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-layout">
+          <div>
+            <div class="section-tag">
+              <i class="fas fa-brain"></i> AI AGENT FOR BLOCKCHAIN TRACKING ON
+              ROBINHOOD CHAIN
+            </div>
+
+            <h1 class="hero-title">
+              <span class="gradient-text">OBELIX</span><br />
+              <span
+                style="
+                  font-size: 0.55em;
+                  font-weight: 700;
+                  color: var(--text-main);
+                  display: block;
+                  margin-top: 0.5rem;
+                "
+              >
+                Omni Blockchain Event & Ledger Intelligence eXplorer
+              </span>
+            </h1>
+
+            <p class="hero-description">
+              Autonomous AI Agent Protocol built on
+              <strong>Robinhood Chain</strong>, designed to monitor, analyze,
+              and track every important event across the blockchain ecosystem in
+              sub-second real time.
+            </p>
+
+            <!-- Infographic Feature Pills -->
+            <div class="hero-badge-group">
+              <div class="pill-badge">
+                <i class="fas fa-crosshairs"></i>
+                <div>
+                  Real-Time Tracking <span>Every Event, Every Block</span>
+                </div>
+              </div>
+              <div class="pill-badge">
+                <i class="fas fa-chart-pie"></i>
+                <div>
+                  AI-Powered Analytics
+                  <span>Understand Patterns, Predict Trends</span>
+                </div>
+              </div>
+              <div class="pill-badge">
+                <i class="fas fa-shield-halved"></i>
+                <div>
+                  Anomaly Detection <span>Detect Risks, Prevent Threats</span>
+                </div>
+              </div>
+              <div class="pill-badge">
+                <i class="fas fa-lightbulb"></i>
+                <div>
+                  Intelligent Insights
+                  <span>Actionable Data, Smarter Decisions</span>
+                </div>
+              </div>
+              <div class="pill-badge">
+                <i class="fas fa-robot"></i>
+                <div>
+                  Autonomous AI Agent
+                  <span>Observe, Learn, Act Automatically</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              style="
+                display: flex;
+                gap: 1rem;
+                margin-top: 2rem;
+                flex-wrap: wrap;
+              "
+            >
+              <a href="explorer.html" class="btn btn-primary">
+                <i class="fas fa-play"></i> Open Live Explorer
+              </a>
+              <a href="agent.html" class="btn btn-secondary">
+                <i class="fas fa-terminal"></i> Try AI Agent Studio
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Right Visual: Futuristic 3D Liquid Chrome Sculpture -->
+          <div class="hero-visual">
+            <div class="obelisk-platform" style="width: 380px; height: 380px">
+              <div class="glowing-ring"></div>
+              <div class="glowing-ring-inner"></div>
+              <img
+                src="assets/hero_liquid_chrome.png"
+                alt="OBELIX 3D Liquid Chrome Sculpture"
+                class="central-obelisk-img"
+                style="
+                  width: 300px;
+                  height: 300px;
+                  object-fit: contain;
+                  filter: drop-shadow(0 0 35px rgba(0, 255, 135, 0.5));
+                  border-radius: 50%;
+                "
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+       3. INTRODUCTION & VISION SECTION
+       ========================================== -->
+    <section
+      class="section"
+      style="
+        background: var(--bg-surface);
+        border-top: 1px solid var(--border-subtle);
+        border-bottom: 1px solid var(--border-subtle);
+      "
+    >
+      <div class="container">
+        <div class="grid-2" style="align-items: center; gap: 3rem">
+          <!-- Left Side: Text & Vision Box -->
+          <div>
+            <div class="section-tag">INTRODUCTION</div>
+            <h2 class="section-title">
+              The Intelligence Layer for Robinhood Chain
+            </h2>
+            <p
+              style="
+                color: var(--text-muted);
+                font-size: 1.05rem;
+                line-height: 1.7;
+                margin-bottom: 1.25rem;
+              "
+            >
+              Powered by advanced artificial intelligence, on-chain analytics,
+              and decentralized infrastructure,
+              <strong>OBELIX</strong> transforms raw blockchain data into
+              actionable intelligence.
+            </p>
+            <p
+              style="
+                color: var(--text-muted);
+                font-size: 1.05rem;
+                line-height: 1.7;
+                margin-bottom: 1.25rem;
+              "
+            >
+              It continuously observes wallets, smart contracts, token activity,
+              NFT collections, DeFi protocols, DAOs, and cross-chain
+              transactions, providing instant insights for users, developers,
+              institutions, and communities.
+            </p>
+            <p
+              style="
+                color: var(--text-muted);
+                font-size: 1.05rem;
+                line-height: 1.7;
+                margin-bottom: 2rem;
+              "
+            >
+              Rather than simply displaying blockchain data, OBELIX understands
+              patterns, predicts trends, detects anomalies, and delivers
+              intelligent recommendations through autonomous AI agents.
+            </p>
+
+            <!-- Vision Card -->
+            <div
+              class="glass-card"
+              style="
+                border-left: 4px solid var(--accent-primary);
+                background: #ffffff;
+                box-shadow: var(--shadow-card);
+              "
+            >
+              <div
+                style="
+                  font-size: 0.8rem;
+                  font-weight: 700;
+                  color: var(--accent-primary);
+                  letter-spacing: 0.15em;
+                  margin-bottom: 0.75rem;
+                "
+              >
+                VISION
+              </div>
+              <blockquote
+                style="
+                  font-family: var(--font-heading);
+                  font-size: 1.8rem;
+                  font-weight: 700;
+                  color: var(--text-main);
+                  line-height: 1.2;
+                  margin-bottom: 0.75rem;
+                "
+              >
+                “Making Every Blockchain Event Intelligent.”
+              </blockquote>
+              <p style="color: var(--text-muted); font-size: 0.92rem">
+                OBELIX becomes the core intelligence layer allowing anyone to
+                navigate blockchain with speed, accuracy, and confidence.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Side: 3D Obelisk Pedestal & Interactive Connected Nodes Network -->
+          <div class="hero-visual" style="min-height: 500px">
+            <div class="obelisk-platform" style="width: 340px; height: 440px">
+              <div
+                class="glowing-ring"
+                style="width: 320px; height: 320px"
+              ></div>
+              <div
+                class="glowing-ring-inner"
+                style="width: 240px; height: 240px"
+              ></div>
+              <img
+                src="assets/central_obelisk_pedestal.png"
+                alt="Central Obelisk Pedestal"
+                class="central-obelisk-img"
+                style="
+                  width: 260px;
+                  height: 320px;
+                  object-fit: contain;
+                  border-radius: var(--radius-lg);
+                "
+              />
+
+              <!-- Floating Connected Ecosystem Nodes -->
+              <div
+                class="node-chip node-wallets"
+                title="Monitor wallet behavior & fund movements"
+              >
+                <i
+                  class="fas fa-wallet"
+                  style="color: var(--accent-primary)"
+                ></i>
+                WALLETS
+              </div>
+              <div
+                class="node-chip node-defi"
+                title="Monitor TVL, transactions, yields, & risks"
+              >
+                <i
+                  class="fas fa-network-wired"
+                  style="color: var(--accent-cyan)"
+                ></i>
+                DEFI PROTOCOLS
+              </div>
+              <div
+                class="node-chip node-contracts"
+                title="Track contract interactions and events"
+              >
+                <i class="fas fa-code" style="color: var(--accent-primary)"></i>
+                SMART CONTRACTS
+              </div>
+              <div
+                class="node-chip node-daos"
+                title="Track proposals, votes, and treasury activities"
+              >
+                <i
+                  class="fas fa-users-gear"
+                  style="color: var(--accent-cyan)"
+                ></i>
+                DAOS
+              </div>
+              <div
+                class="node-chip node-tokens"
+                title="Analyze token transfers, swaps, and liquidity"
+              >
+                <i
+                  class="fas fa-coins"
+                  style="color: var(--accent-primary)"
+                ></i>
+                TOKENS
+              </div>
+              <div
+                class="node-chip node-crosschain"
+                title="Observe bridge activities and cross-chain flows"
+              >
+                <i class="fas fa-link" style="color: var(--accent-cyan)"></i>
+                CROSS-CHAIN TRANSACTIONS
+              </div>
+              <div
+                class="node-chip node-nfts"
+                title="Track mints, sales, and collection performance"
+              >
+                <i
+                  class="fas fa-shapes"
+                  style="color: var(--accent-primary)"
+                ></i>
+                NFT COLLECTIONS
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+       4. HOW OBELIX WORKS (Interactive Step Pipeline)
+       ========================================== -->
+    <section class="section">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 3rem">
+          <div class="section-tag">AUTOMATED WORKFLOW</div>
+          <h2 class="section-title">How Obelix Works</h2>
+          <p class="section-subtitle" style="margin: 0 auto">
+            Click through the interactive 6-stage autonomous AI processing
+            pipeline below.
+          </p>
+        </div>
+
+        <!-- 6 Steps Pipeline Grid -->
+        <div class="pipeline-grid">
+          <div class="pipeline-card active" data-step="01">
+            <div class="step-num">01</div>
+            <div class="step-icon"><i class="fas fa-download"></i></div>
+            <div class="step-title">COLLECT</div>
+            <div class="step-desc">
+              Gather data from all on-chain sources in real time.
+            </div>
+          </div>
+
+          <div class="pipeline-card" data-step="02">
+            <div class="step-num">02</div>
+            <div class="step-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="step-title">ANALYZE</div>
+            <div class="step-desc">
+              AI engine processes and understands blockchain data.
+            </div>
+          </div>
+
+          <div class="pipeline-card" data-step="03">
+            <div class="step-num">03</div>
+            <div class="step-icon"><i class="fas fa-brain"></i></div>
+            <div class="step-title">INTELLIGENCE</div>
+            <div class="step-desc">
+              Detect patterns, predict trends, and find anomalies.
+            </div>
+          </div>
+
+          <div class="pipeline-card" data-step="04">
+            <div class="step-num">04</div>
+            <div class="step-icon"><i class="fas fa-bell"></i></div>
+            <div class="step-title">DELIVER</div>
+            <div class="step-desc">
+              Deliver insights and alerts through AI agents & dashboards.
+            </div>
+          </div>
+
+          <div class="pipeline-card" data-step="05">
+            <div class="step-num">05</div>
+            <div class="step-icon"><i class="fas fa-robot"></i></div>
+            <div class="step-title">ACT</div>
+            <div class="step-desc">
+              Autonomous AI agents take actions, notify, and recommend.
+            </div>
+          </div>
+
+          <div class="pipeline-card" data-step="06">
+            <div class="step-num">06</div>
+            <div class="step-icon"><i class="fas fa-arrows-rotate"></i></div>
+            <div class="step-title">EVOLVE</div>
+            <div class="step-desc">
+              Continuously learning and improving for better intelligence.
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Active Step Details Panel -->
+        <div id="pipeline-detail-content" class="pipeline-detail-box">
+          <!-- Javascript dynamically injects step details -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+       5. WHAT OBELIX TRACKS, POWERED BY, KEY BENEFITS & BUILT ON ROBINHOOD CHAIN
+       ========================================== -->
+    <section class="section" style="background: var(--bg-surface)">
+      <div class="container">
+        <div class="grid-4">
+          <!-- Column 1: What Obelix Tracks -->
+          <div class="glass-card">
+            <div class="section-tag" style="margin-bottom: 1.5rem">
+              WHAT OBELIX TRACKS
+            </div>
+
+            <ul style="list-style: none">
+              <li
+                style="
+                  margin-bottom: 1.25rem;
+                  display: flex;
+                  gap: 1rem;
+                  align-items: flex-start;
+                "
+              >
+                <div
+                  class="track-icon-box"
+                  style="
+                    margin-bottom: 0;
+                    width: 38px;
+                    height: 38px;
+                    min-width: 38px;
+                  "
+                >
+                  <i class="fas fa-wallet"></i>
+                </div>
+                <div>
+                  <strong style="color: var(--text-main); font-size: 0.92rem"
+                    >Wallet Activities</strong
+                  >
+                  <p style="color: var(--text-muted); font-size: 0.8rem">
+                    Monitor wallet behavior and fund movements.
+                  </p>
+                </div>
+              </li>
+              <li
+                style="
+                  margin-bottom: 1.25rem;
+                  display: flex;
+                  gap: 1rem;
+                  align-items: flex-start;
+                "
+              >
+                <div
+                  class="track-icon-box"
+                  style="
+                    margin-bottom: 0;
+                    width: 38px;
+                    height: 38px;
+                    min-width: 38px;
+                  "
+                >
+                  <i class="fas fa-file-code"></i>
+                </div>
+                <div>
+                  <strong style="color: var(--text-main); font-size: 0.92rem"
+                    >Smart Contracts</strong
+                  >
+                  <p style="color: var(--text-muted); font-size: 0.8rem">
+                    Track contract interactions and events.
+                  </p>
+                </div>
+              </li>
+              <li
+                style="
+                  margin-bottom: 1.25rem;
+                  display: flex;
+                  gap: 1rem;
+                  align-items: flex-start;
+                "
+              >
+                <div
+                  class="track-icon-box"
+                  style="
+                    margin-bottom: 0;
+                    width: 38px;
+                    height: 38px;
+                    min-width: 38px;
+                  "
+                >
+                  <i class="fas fa-coins"></i>
+                </div>
+                <div>
+                  <strong style="color: var(--text-main); font-size: 0.92rem"
+                    >Token Activity</strong
+                  >
+                  <p style="color: var(--text-muted); font-size: 0.8rem">
+                    Analyze token transfers, swaps, and liquidity.
+                  </p>
+                </div>
+              </li>
+              <li
+                style="
+                  margin-bottom: 1.25rem;
+                  display: flex;
+                  gap: 1rem;
+                  align-items: flex-start;
+                "
+              >
+                <div
+                  class="track-icon-box"
+                  style="
+                    margin-bottom: 0;
+                    width: 38px;
+                    height: 38px;
+                    min-width: 38px;
+                  "
+                >
+                  <i class="fas fa-layer-group"></i>
+                </div>
+                <div>
+                  <strong style="color: var(--text-main); font-size: 0.92rem"
+                    >NFT Collections</strong
+                  >
+                  <p style="color: var(--text-muted); font-size: 0.8rem">
+                    Track mints, sales, and collection performance.
+                  </p>
+                </div>
+              </li>
+              <li
+                style="
+                  margin-bottom: 1.25rem;
+                  display: flex;
+                  gap: 1rem;
+                  align-items: flex-start;
+                "
+              >
+                <div
+                  class="track-icon-box"
+                  style="
+                    margin-bottom: 0;
+                    width: 38px;
+                    height: 38px;
+                    min-width: 38px;
+                  "
+                >
+                  <i class="fas fa-chart-candlestick"></i>
+                </div>
+                <div>
+                  <strong style="color: var(--text-main); font-size: 0.92rem"
+                    >DeFi Protocols</strong
+                  >
+                  <p style="color: var(--text-muted); font-size: 0.8rem">
+                    Monitor TVL, transactions, yields, and risks.
+                  </p>
+                </div>
+              </li>
+              <li
+                style="
+                  margin-bottom: 1.25rem;
+                  display: flex;
+                  gap: 1rem;
+                  align-items: flex-start;
+                "
+              >
+                <div
+                  class="track-icon-box"
+                  style="
+                    margin-bottom: 0;
+                    width: 38px;
+                    height: 38px;
+                    min-width: 38px;
+                  "
+                >
+                  <i class="fas fa-landmark"></i>
+                </div>
+                <div>
+                  <strong style="color: var(--text-main); font-size: 0.92rem"
+                    >DAOs & Governance</strong
+                  >
+                  <p style="color: var(--text-muted); font-size: 0.8rem">
+                    Track proposals, votes, and treasury activities.
+                  </p>
+                </div>
+              </li>
+              <li style="display: flex; gap: 1rem; align-items: flex-start">
+                <div
+                  class="track-icon-box"
+                  style="
+                    margin-bottom: 0;
+                    width: 38px;
+                    height: 38px;
+                    min-width: 38px;
+                  "
+                >
+                  <i class="fas fa-diagram-project"></i>
+                </div>
+                <div>
+                  <strong style="color: var(--text-main); font-size: 0.92rem"
+                    >Cross-Chain Events</strong
+                  >
+                  <p style="color: var(--text-muted); font-size: 0.8rem">
+                    Observe bridge activities and cross-chain flows.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 2: Powered By -->
+          <div
+            class="glass-card"
+            style="
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+            "
+          >
+            <div>
+              <div class="section-tag" style="margin-bottom: 1.5rem">
+                POWERED BY
+              </div>
+              <ul style="list-style: none">
+                <li
+                  style="
+                    margin-bottom: 1.25rem;
+                    display: flex;
+                    gap: 0.85rem;
+                    align-items: center;
+                  "
+                >
+                  <i
+                    class="fas fa-atom"
+                    style="color: var(--accent-primary); font-size: 1.1rem"
+                  ></i>
+                  <span
+                    style="
+                      color: var(--text-main);
+                      font-weight: 600;
+                      font-size: 0.9rem;
+                    "
+                    >Advanced AI & Machine Learning</span
+                  >
+                </li>
+                <li
+                  style="
+                    margin-bottom: 1.25rem;
+                    display: flex;
+                    gap: 0.85rem;
+                    align-items: center;
+                  "
+                >
+                  <i
+                    class="fas fa-server"
+                    style="color: var(--accent-primary); font-size: 1.1rem"
+                  ></i>
+                  <span
+                    style="
+                      color: var(--text-main);
+                      font-weight: 600;
+                      font-size: 0.9rem;
+                    "
+                    >On-Chain Analytics Engine</span
+                  >
+                </li>
+                <li
+                  style="
+                    margin-bottom: 1.25rem;
+                    display: flex;
+                    gap: 0.85rem;
+                    align-items: center;
+                  "
+                >
+                  <i
+                    class="fas fa-cubes"
+                    style="color: var(--accent-primary); font-size: 1.1rem"
+                  ></i>
+                  <span
+                    style="
+                      color: var(--text-main);
+                      font-weight: 600;
+                      font-size: 0.9rem;
+                    "
+                    >Decentralized Infrastructure</span
+                  >
+                </li>
+                <li
+                  style="
+                    margin-bottom: 1.25rem;
+                    display: flex;
+                    gap: 0.85rem;
+                    align-items: center;
+                  "
+                >
+                  <i
+                    class="fas fa-wave-square"
+                    style="color: var(--accent-primary); font-size: 1.1rem"
+                  ></i>
+                  <span
+                    style="
+                      color: var(--text-main);
+                      font-weight: 600;
+                      font-size: 0.9rem;
+                    "
+                    >Real-Time Event Monitoring</span
+                  >
+                </li>
+                <li style="display: flex; gap: 0.85rem; align-items: center">
+                  <i
+                    class="fas fa-robot"
+                    style="color: var(--accent-primary); font-size: 1.1rem"
+                  ></i>
+                  <span
+                    style="
+                      color: var(--text-main);
+                      font-weight: 600;
+                      font-size: 0.9rem;
+                    "
+                    >Autonomous AI Agents</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div style="margin-top: 2rem; text-align: center">
+              <img
+                src="assets/cyber_ai_head.png"
+                alt="Obelix Cyber AI Agent"
+                style="
+                  width: 100%;
+                  max-width: 200px;
+                  height: 170px;
+                  object-fit: cover;
+                  border-radius: var(--radius-md);
+                  border: 1px solid var(--border-highlight);
+                  box-shadow: 0 0 25px rgba(0, 255, 135, 0.25);
+                "
+              />
+            </div>
+          </div>
+
+          <!-- Column 3: Key Benefits -->
+          <div class="glass-card">
+            <div class="section-tag" style="margin-bottom: 1.25rem">
+              KEY BENEFITS
+            </div>
+            <ul style="list-style: none">
+              <li style="margin-bottom: 1rem">
+                <strong style="color: var(--accent-primary); font-size: 0.92rem"
+                  ><i class="fas fa-bolt"></i> Real-Time Awareness</strong
+                >
+                <p style="color: var(--text-muted); font-size: 0.82rem">
+                  Stay updated with every blockchain event instantly.
+                </p>
+              </li>
+              <li style="margin-bottom: 1rem">
+                <strong style="color: var(--accent-primary); font-size: 0.92rem"
+                  ><i class="fas fa-shield-virus"></i> Smart Risk
+                  Detection</strong
+                >
+                <p style="color: var(--text-muted); font-size: 0.82rem">
+                  AI detects suspicious activity and potential threats.
+                </p>
+              </li>
+              <li style="margin-bottom: 1rem">
+                <strong style="color: var(--accent-primary); font-size: 0.92rem"
+                  ><i class="fas fa-brain"></i> Better Decisions</strong
+                >
+                <p style="color: var(--text-muted); font-size: 0.82rem">
+                  Get intelligent insights for smarter investment strategies.
+                </p>
+              </li>
+              <li style="margin-bottom: 1rem">
+                <strong style="color: var(--accent-primary); font-size: 0.92rem"
+                  ><i class="fas fa-code-branch"></i> Developer Friendly</strong
+                >
+                <p style="color: var(--text-muted); font-size: 0.82rem">
+                  Powerful APIs and SDKs for seamless integration.
+                </p>
+              </li>
+              <li>
+                <strong style="color: var(--accent-primary); font-size: 0.92rem"
+                  ><i class="fas fa-heart"></i> Community Empowerment</strong
+                >
+                <p style="color: var(--text-muted); font-size: 0.82rem">
+                  Transparent data for a stronger, informed community.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Built On Robinhood Chain -->
+          <div
+            class="glass-card"
+            style="
+              background: linear-gradient(
+                135deg,
+                rgba(0, 168, 89, 0.08) 0%,
+                #ffffff 100%
+              );
+              border-color: var(--accent-primary);
+              position: relative;
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+            "
+          >
+            <div>
+              <div
+                style="
+                  font-size: 0.75rem;
+                  font-weight: 700;
+                  color: var(--accent-primary);
+                  letter-spacing: 0.1em;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                BUILT ON
+              </div>
+              <h3
+                style="
+                  font-size: 1.3rem;
+                  color: var(--text-main);
+                  margin-bottom: 0.5rem;
+                "
+              >
+                ROBINHOOD CHAIN
+              </h3>
+              <p
+                style="
+                  color: var(--text-muted);
+                  font-size: 0.85rem;
+                  margin-bottom: 1rem;
+                "
+              >
+                High Performance • Low Fees • True Decentralization
+              </p>
+            </div>
+
+            <div>
+              <div
+                style="
+                  margin-bottom: 1rem;
+                  border-radius: var(--radius-md);
+                  overflow: hidden;
+                  border: 1px solid var(--border-color);
+                "
+              >
+                <img
+                  src="assets/robinhood_city_obelisk.png"
+                  alt="Robinhood Chain Cyber Obelisk City"
+                  style="width: 100%; height: 140px; object-fit: cover"
+                />
+              </div>
+              <div
+                class="flex-center"
+                style="gap: 0.75rem; justify-content: flex-start"
+              >
+                <img
+                  src="assets/logo.svg"
+                  width="28"
+                  height="28"
+                  alt="Robinhood Chain Logo"
+                />
+                <span
+                  style="
+                    font-family: var(--font-heading);
+                    font-weight: 800;
+                    letter-spacing: 0.05em;
+                    color: var(--accent-primary);
+                    font-size: 0.88rem;
+                  "
+                  >ROBINHOOD CHAIN</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+       6. OBELIX FEATURES GRID
+       ========================================== -->
+    <section class="section">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 3rem">
+          <div class="section-tag">CAPABILITIES</div>
+          <h2 class="section-title">OBELIX Features</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="glass-card">
+            <div class="track-icon-box">
+              <i class="fas fa-tower-broadcast"></i>
+            </div>
+            <h3 class="track-card-title">Real-Time Blockchain Monitoring</h3>
+            <p class="track-card-desc">
+              Live tracking of all events across the ecosystem with sub-second
+              WebSocket telemetry.
+            </p>
+          </div>
+
+          <div class="glass-card">
+            <div class="track-icon-box">
+              <i class="fas fa-diagram-next"></i>
+            </div>
+            <h3 class="track-card-title">AI Pattern Recognition</h3>
+            <p class="track-card-desc">
+              Detect patterns and predict future trends using deep machine
+              learning models.
+            </p>
+          </div>
+
+          <div class="glass-card">
+            <div class="track-icon-box"><i class="fas fa-shield-cat"></i></div>
+            <h3 class="track-card-title">Anomaly & Fraud Detection</h3>
+            <p class="track-card-desc">
+              Identify unusual activities, flash loan exploits, and honeypots
+              before they become risks.
+            </p>
+          </div>
+
+          <div class="glass-card">
+            <div class="track-icon-box"><i class="fas fa-bullhorn"></i></div>
+            <h3 class="track-card-title">Intelligent Alerts</h3>
+            <p class="track-card-desc">
+              Instant notifications for critical blockchain events straight to
+              your preferred channels.
+            </p>
+          </div>
+
+          <div class="glass-card">
+            <div class="track-icon-box">
+              <i class="fas fa-chart-column"></i>
+            </div>
+            <h3 class="track-card-title">Advanced Dashboards</h3>
+            <p class="track-card-desc">
+              Visualize on-chain data with powerful analytics dashboards
+              tailored for institutional needs.
+            </p>
+          </div>
+
+          <div class="glass-card">
+            <div class="track-icon-box">
+              <i class="fas fa-cubes-stacked"></i>
+            </div>
+            <h3 class="track-card-title">API & SDK Integration</h3>
+            <p class="track-card-desc">
+              Easy integration for dApps, keeper bots, protocols, and analytics
+              platforms.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+       7. THE OBELIX ECOSYSTEM & FOOTER
+       ========================================== -->
+    <footer class="footer">
+      <div class="container">
+        <!-- Ecosystem Stakeholders Bar -->
+        <div
+          style="
+            background: var(--bg-card);
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin-bottom: 3.5rem;
+          "
+        >
+          <div
+            style="
+              text-align: center;
+              font-size: 0.8rem;
+              font-weight: 700;
+              color: var(--accent-primary);
+              letter-spacing: 0.1em;
+              margin-bottom: 1.5rem;
+            "
+          >
+            THE OBELIX ECOSYSTEM
+          </div>
+          <div
+            class="flex-between"
+            style="
+              flex-wrap: wrap;
+              gap: 1.5rem;
+              justify-content: space-around;
+              text-align: center;
+            "
+          >
+            <div>
+              <i
+                class="fas fa-users"
+                style="
+                  font-size: 1.8rem;
+                  color: var(--accent-primary);
+                  margin-bottom: 0.4rem;
+                "
+              ></i>
+              <div style="font-weight: 700; font-size: 0.9rem">Users</div>
+            </div>
+            <div>
+              <i
+                class="fas fa-code"
+                style="
+                  font-size: 1.8rem;
+                  color: var(--accent-cyan);
+                  margin-bottom: 0.4rem;
+                "
+              ></i>
+              <div style="font-weight: 700; font-size: 0.9rem">Developers</div>
+            </div>
+            <div>
+              <img
+                src="assets/logo.svg"
+                width="36"
+                height="36"
+                alt="Obelix AI"
+                style="
+                  margin-bottom: 0.4rem;
+                  filter: drop-shadow(0 0 8px var(--accent-primary));
+                "
+              />
+              <div
+                style="
+                  font-weight: 700;
+                  font-size: 0.9rem;
+                  color: var(--accent-primary);
+                "
+              >
+                OBELIX AI AGENT
+              </div>
+            </div>
+            <div>
+              <i
+                class="fas fa-building-columns"
+                style="
+                  font-size: 1.8rem;
+                  color: var(--accent-cyan);
+                  margin-bottom: 0.4rem;
+                "
+              ></i>
+              <div style="font-weight: 700; font-size: 0.9rem">
+                Institutions
+              </div>
+            </div>
+            <div>
+              <i
+                class="fas fa-globe"
+                style="
+                  font-size: 1.8rem;
+                  color: var(--accent-primary);
+                  margin-bottom: 0.4rem;
+                "
+              ></i>
+              <div style="font-weight: 700; font-size: 0.9rem">Communities</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="brand-logo" style="margin-bottom: 1rem">
+              <img src="assets/logo.svg" width="32" height="32" alt="Logo" />
+              <span class="brand-title" style="font-size: 1.3rem">OBELIX</span>
+            </a>
+            <p>
+              The AI Agent Protocol that turns blockchain events into
+              intelligence on Robinhood Chain.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="footer-heading">Platform</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home Overview</a></li>
+              <li><a href="explorer.html">Live Block Explorer</a></li>
+              <li><a href="agent.html">AI Agent Studio</a></li>
+              <li><a href="ecosystem.html">Ecosystem & SDK</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="footer-heading">Resources</h4>
+            <ul class="footer-links">
+              <li><a href="ecosystem.html#docs">SDK Documentation</a></li>
+              <li><a href="agent.html#prompts">AI Command Prompts</a></li>
+              <li>
+                <a href="https://robinhood.com" target="_blank"
+                  >Robinhood Chain Specs</a
+                >
+              </li>
+              <li><a href="#">Security Audit Report</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="footer-heading">Connect</h4>
+            <div class="footer-socials" style="margin-bottom: 1rem">
+              <a href="https://obelix.ai" class="social-icon" title="obelix.ai"
+                ><i class="fas fa-globe"></i
+              ></a>
+              <a
+                href="https://twitter.com/obelix_ai"
+                class="social-icon"
+                title="@obelix_ai"
+                ><i class="fab fa-x-twitter"></i
+              ></a>
+              <a href="#" class="social-icon" title="Discord"
+                ><i class="fab fa-discord"></i
+              ></a>
+              <a href="#" class="social-icon" title="Telegram"
+                ><i class="fab fa-telegram"></i
+              ></a>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted)">
+              Website:
+              <strong style="color: var(--accent-primary)">obelix.ai</strong
+              ><br />
+              X (Twitter):
+              <strong style="color: var(--accent-primary)">@obelix_ai</strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>&copy; 2026 OBELIX AI Protocol. Built for Robinhood Chain.</div>
+          <div style="display: flex; gap: 1.5rem">
+            <a href="#" style="color: var(--text-dark); text-decoration: none"
+              >Privacy Policy</a
+            >
+            <a href="#" style="color: var(--text-dark); text-decoration: none"
+              >Terms of Service</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecosystem & SDK | OBELIX Developer Portal</title>
+  <meta name="description" content="Integrate OBELIX AI Agent SDK, stream telemetry data, and build autonomous agents on Robinhood Chain.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon">
+          <img src="assets/logo.svg" alt="OBELIX Logo" width="38" height="38">
+        </div>
+        <div>
+          <span class="brand-title">OBELIX</span>
+          <span class="brand-tagline">Ecosystem & SDK</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="explorer.html" class="nav-link">Live Explorer</a></li>
+        <li><a href="agent.html" class="nav-link">AI Agent Studio</a></li>
+        <li><a href="ecosystem.html" class="nav-link active">Ecosystem & SDK</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <span class="pulse-badge">
+          <i class="fas fa-code"></i> SDK v2.4.0 RELEASED
+        </span>
+        <button class="hamburger" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="section" style="padding-top: 8.5rem;">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <div class="section-tag"><i class="fas fa-cubes"></i> DEVELOPER CENTER</div>
+        <h1 class="section-title">Build with OBELIX SDK</h1>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Plug real-time Robinhood Chain intelligence and autonomous AI agent triggers into your dApps, keeper bots, or analytics.
+        </p>
+      </div>
+
+      <!-- Network Stats Bar -->
+      <div class="grid-4" style="margin-bottom: 3rem;">
+        <div class="glass-card" style="text-align: center;">
+          <div style="font-size: 2rem; font-family: var(--font-code); font-weight: 700; color: var(--accent-primary);">0.42s</div>
+          <div style="color: var(--text-muted); font-size: 0.85rem;">Avg Block Finality</div>
+        </div>
+
+        <div class="glass-card" style="text-align: center;">
+          <div style="font-size: 2rem; font-family: var(--font-code); font-weight: 700; color: var(--accent-cyan);">15,000+</div>
+          <div style="color: var(--text-muted); font-size: 0.85rem;">Network Capacity TPS</div>
+        </div>
+
+        <div class="glass-card" style="text-align: center;">
+          <div style="font-size: 2rem; font-family: var(--font-code); font-weight: 700; color: var(--accent-primary);">&lt; $0.001</div>
+          <div style="color: var(--text-muted); font-size: 0.85rem;">Avg Tx Gas Fee</div>
+        </div>
+
+        <div class="glass-card" style="text-align: center;">
+          <div style="font-size: 2rem; font-family: var(--font-code); font-weight: 700; color: #FFC107;">1,420+</div>
+          <div style="color: var(--text-muted); font-size: 0.85rem;">Deployed Keeper AI Bots</div>
+        </div>
+      </div>
+
+      <!-- Interactive Code Snippet Playground -->
+      <div class="glass-card" style="background: #070B0E; border-color: var(--border-highlight); padding: 0; overflow: hidden;" id="docs">
+        <div style="background: #0E161C; padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-subtle);">
+          <div style="display: flex; gap: 0.5rem;" id="code-tabs">
+            <button class="btn btn-secondary active-code-tab" onclick="switchCodeTab('js')" style="padding: 0.4rem 0.9rem; font-size: 0.8rem;" id="tab-btn-js">
+              <i class="fab fa-js" style="color: #F7DF1E;"></i> JavaScript / Node.js
+            </button>
+            <button class="btn btn-secondary" onclick="switchCodeTab('python')" style="padding: 0.4rem 0.9rem; font-size: 0.8rem;" id="tab-btn-python">
+              <i class="fab fa-python" style="color: #3776AB;"></i> Python
+            </button>
+            <button class="btn btn-secondary" onclick="switchCodeTab('curl')" style="padding: 0.4rem 0.9rem; font-size: 0.8rem;" id="tab-btn-curl">
+              <i class="fas fa-terminal" style="color: var(--accent-primary);"></i> cURL REST API
+            </button>
+          </div>
+
+          <button class="btn btn-secondary" onclick="copyCodeSnippet()" style="padding: 0.4rem 0.8rem; font-size: 0.78rem;">
+            <i class="fas fa-copy"></i> <span id="copy-btn-text">Copy Code</span>
+          </button>
+        </div>
+
+        <!-- Code Content Areas -->
+        <div style="padding: 1.5rem; font-family: var(--font-code); font-size: 0.88rem; overflow-x: auto; background: #05080A; color: #D4D4D4;">
+          <!-- JavaScript Snippet -->
+          <pre id="snippet-js"><code><span style="color: #6A9955;">// Install OBELIX SDK: npm install @obelix/sdk</span>
+<span style="color: #569CD6;">import</span> { ObelixClient, RiskLevel } <span style="color: #569CD6;">from</span> <span style="color: #CE9178;">'@obelix/sdk'</span>;
+
+<span style="color: #569CD6;">const</span> obelix = <span style="color: #569CD6;">new</span> <span style="color: #4EC9B0;">ObelixClient</span>({
+  network: <span style="color: #CE9178;">'robinhood-mainnet'</span>,
+  apiKey: <span style="color: #CE9178;">'obx_live_998124a09c21'</span>
+});
+
+<span style="color: #6A9955;">// Stream real-time AI anomaly alerts</span>
+obelix.onAnomaly((event) => {
+  <span style="color: #569CD6;">console</span>.log(<span style="color: #CE9178;">`[ALERT] Anomaly Detected on ${event.contractAddress}`</span>);
+  <span style="color: #569CD6;">if</span> (event.riskLevel === RiskLevel.DANGER) {
+    obelix.triggerKeeperPause(event.poolId);
+  }
+});
+
+<span style="color: #569CD6;">await</span> obelix.startStream();</code></pre>
+
+          <!-- Python Snippet -->
+          <pre id="snippet-python" style="display: none;"><code><span style="color: #6A9955;"># Install OBELIX Python SDK: pip install obelix-sdk</span>
+<span style="color: #569CD6;">from</span> obelix <span style="color: #569CD6;">import</span> ObelixAgent, Network
+
+agent = ObelixAgent(
+    network=Network.ROBINHOOD_MAINNET,
+    api_key=<span style="color: #CE9178;">"obx_live_998124a09c21"</span>
+)
+
+<span style="color: #569CD6;">@agent.on_event</span>(category=<span style="color: #CE9178;">"DEFI"</span>, risk_threshold=<span style="color: #B5CEA8;">75</span>)
+<span style="color: #569CD6;">def</span> <span style="color: #DCDCAA;">handle_anomaly</span>(event):
+    print(<span style="color: #CE9178;">f"High risk transaction detected: {event.tx_hash}"</span>)
+    agent.send_telegram_alert(channel_id=<span style="color: #CE9178;">"@obelix_alerts"</span>, message=event.summary)
+
+agent.listen_forever()</code></pre>
+
+          <!-- cURL Snippet -->
+          <pre id="snippet-curl" style="display: none;"><code><span style="color: #6A9955;"># Query latest AI Anomaly Insights via REST</span>
+curl -X GET <span style="color: #CE9178;">"https://api.obelix.ai/v1/robinhood/anomalies?limit=10"</span> \
+  -H <span style="color: #CE9178;">"Authorization: Bearer obx_live_998124a09c21"</span> \
+  -H <span style="color: #CE9178;">"Content-Type: application/json"</span></code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community & Ecosystem Grid -->
+  <section class="section" style="background: var(--bg-surface);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <div class="section-tag">COMMUNITY & PROTOCOLS</div>
+        <h2 class="section-title">Joined Ecosystem Stakeholders</h2>
+      </div>
+
+      <div class="grid-3">
+        <div class="glass-card">
+          <div class="track-icon-box"><i class="fas fa-laptop-code"></i></div>
+          <h3 class="track-card-title">dApp Developers</h3>
+          <p class="track-card-desc">Embed automated exploit detection & real-time telemetry into your user interface.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="track-icon-box"><i class="fas fa-building-columns"></i></div>
+          <h3 class="track-card-title">Institutional Funds</h3>
+          <p class="track-card-desc">Monitor portfolio liquidity, tracking large transfers, and institutional yield movements 24/7.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="track-icon-box"><i class="fas fa-users-rays"></i></div>
+          <h3 class="track-card-title">DAO Communities</h3>
+          <p class="track-card-desc">Receive instant voting notifications, treasury tracking alerts, and governance analytics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 OBELIX AI Protocol. Developer & Ecosystem Center.</div>
+        <div style="display: flex; gap: 1rem;">
+          <a href="index.html" style="color: var(--accent-primary);">Home</a>
+          <a href="explorer.html" style="color: var(--accent-primary);">Live Explorer</a>
+          <a href="agent.html" style="color: var(--accent-primary);">AI Studio</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script>
+    function switchCodeTab(lang) {
+      document.getElementById('snippet-js').style.display = lang === 'js' ? 'block' : 'none';
+      document.getElementById('snippet-python').style.display = lang === 'python' ? 'block' : 'none';
+      document.getElementById('snippet-curl').style.display = lang === 'curl' ? 'block' : 'none';
+
+      document.querySelectorAll('#code-tabs button').forEach(btn => btn.style.borderColor = 'var(--border-subtle)');
+      const activeBtn = document.getElementById('tab-btn-' + lang);
+      if (activeBtn) activeBtn.style.borderColor = 'var(--accent-primary)';
+    }
+
+    function copyCodeSnippet() {
+      let codeText = '';
+      if (document.getElementById('snippet-js').style.display !== 'none') {
+        codeText = document.getElementById('snippet-js').innerText;
+      } else if (document.getElementById('snippet-python').style.display !== 'none') {
+        codeText = document.getElementById('snippet-python').innerText;
+      } else {
+        codeText = document.getElementById('snippet-curl').innerText;
+      }
+
+      navigator.clipboard.writeText(codeText);
+      const textSpan = document.getElementById('copy-btn-text');
+      if (textSpan) {
+        textSpan.innerText = 'Copied!';
+        setTimeout(() => { textSpan.innerText = 'Copy Code'; }, 2000);
+      }
+    }
+  </script>
+</body>
+</html>

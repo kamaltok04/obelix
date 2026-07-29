@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Agent Studio | OBELIX Intelligence Console</title>
+  <meta name="description" content="Interact with Obelix AI Autonomous Agents, query blockchain patterns, and configure intelligent threat alert rules on Robinhood Chain.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon">
+          <img src="assets/logo.svg" alt="OBELIX Logo" width="38" height="38">
+        </div>
+        <div>
+          <span class="brand-title">OBELIX</span>
+          <span class="brand-tagline">AI Agent Studio</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="explorer.html" class="nav-link">Live Explorer</a></li>
+        <li><a href="agent.html" class="nav-link active">AI Agent Studio</a></li>
+        <li><a href="ecosystem.html" class="nav-link">Ecosystem & SDK</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <span class="pulse-badge">
+          <i class="fas fa-brain"></i> MODEL: OBELIX-NEURAL-V2
+        </span>
+        <button class="hamburger" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="section" style="padding-top: 8.5rem;">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <div class="section-tag"><i class="fas fa-terminal"></i> INTERACTIVE CONSOLE</div>
+        <h1 class="section-title">Obelix AI Command Terminal</h1>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Query on-chain events, run anomaly diagnostic scans, or test autonomous agent triggers in real time.
+        </p>
+      </div>
+
+      <!-- Cyberpunk Terminal Window -->
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="dot-btn dot-red"></span>
+            <span class="dot-btn dot-yellow"></span>
+            <span class="dot-btn dot-green"></span>
+          </div>
+          <div class="terminal-title">obelix-ai-agent --node=robinhood-mainnet-1</div>
+          <div><i class="fas fa-shield" style="color: var(--accent-primary);"></i> Encrypted</div>
+        </div>
+
+        <div class="terminal-body" id="terminal-body">
+          <div class="terminal-line">
+            <span style="color: var(--accent-primary);">[SYSTEM READY]</span> OBELIX AI Protocol v2.4 initialized. Connected to Robinhood Chain RPC.
+          </div>
+          <div class="terminal-line">
+            <span style="color: #94A3B8;">Type a command below or click a quick prompt to test AI inference.</span>
+          </div>
+          <hr style="border-color: var(--border-subtle); margin: 1rem 0;">
+        </div>
+
+        <div style="padding: 1rem 1.5rem; background: #080D11; border-top: 1px solid var(--border-subtle);">
+          <div class="quick-prompts">
+            <span class="prompt-chip" data-prompt="Scan last 100 blocks for flash loan arbitrage anomalies">
+              <i class="fas fa-search"></i> Scan Flash Loan Anomalies
+            </span>
+            <span class="prompt-chip" data-prompt="Predict gas price trend for next 60 minutes">
+              <i class="fas fa-chart-line"></i> Predict Gas Trend
+            </span>
+            <span class="prompt-chip" data-prompt="Check risk score for wallet 0x7F2b...4A91">
+              <i class="fas fa-user-shield"></i> Wallet Risk Score
+            </span>
+            <span class="prompt-chip" data-prompt="Show active keeper bots on Robinhood Chain">
+              <i class="fas fa-robot"></i> Active Keeper Bots
+            </span>
+          </div>
+
+          <div class="terminal-input-row">
+            <span class="terminal-prompt">user@obelix:~$</span>
+            <input type="text" id="terminal-input" class="terminal-input" placeholder="Type prompt (e.g., Scan for high value wallet moves...)" autocomplete="off">
+            <button id="terminal-send-btn" class="btn btn-primary" style="padding: 0.4rem 1rem; font-size: 0.82rem; min-width: 80px;">
+              Run <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Alert Rules Builder Section -->
+  <section class="section" style="background: var(--bg-surface);">
+    <div class="container">
+      <div class="grid-2" style="align-items: center;">
+        <div>
+          <div class="section-tag"><i class="fas fa-bell"></i> AUTOMATED ALERTS</div>
+          <h2 class="section-title">Configure Autonomous AI Triggers</h2>
+          <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem;">
+            Set intelligent alert criteria. When Obelix AI detects target conditions on Robinhood Chain, autonomous agents execute webhooks, notify Telegram/Discord, or execute smart contract safety pauses.
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <div class="pulse-badge" style="justify-content: flex-start; padding: 0.8rem 1.2rem; font-size: 0.9rem;">
+              <i class="fas fa-check" style="color: var(--accent-primary);"></i> Trigger Response Latency: &lt; 400ms
+            </div>
+            <div class="pulse-badge" style="justify-content: flex-start; padding: 0.8rem 1.2rem; font-size: 0.9rem; border-color: var(--accent-cyan); color: var(--accent-cyan);">
+              <i class="fas fa-shield-halved"></i> Exploit Prevention Engine Active
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card">
+          <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem; color: var(--accent-primary);">
+            <i class="fas fa-sliders"></i> Rule Configurator Preview
+          </h3>
+
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.4rem;">Target Protocol Event</label>
+            <select style="width: 100%; background: #FFFFFF; border: 1px solid var(--border-color); color: var(--text-main); padding: 0.75rem; border-radius: 8px; font-family: var(--font-body);">
+              <option>DeFi Liquidity Pool Flash Loan (&gt; $100k)</option>
+              <option>Unverified Smart Contract Deployment</option>
+              <option>Whale Wallet Transfer (&gt; 1,000,000 Tokens)</option>
+              <option>Governance Proposal Creation</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.4rem;">Autonomous AI Action</label>
+            <select style="width: 100%; background: #FFFFFF; border: 1px solid var(--border-color); color: var(--text-main); padding: 0.75rem; border-radius: 8px; font-family: var(--font-body);">
+              <option>Send Instant Webhook + Telegram Alert</option>
+              <option>Invoke Emergency Pause Keeper Bot</option>
+              <option>Log Anomaly to Dashboard Analytics</option>
+            </select>
+          </div>
+
+          <button class="btn btn-primary" style="width: 100%;" onclick="alert('Rule Configured! Obelix AI Agent is now monitoring Robinhood Chain for this condition.')">
+            <i class="fas fa-plus-circle"></i> Deploy Agent Rule
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 OBELIX AI Protocol. AI Studio Console.</div>
+        <div style="display: flex; gap: 1rem;">
+          <a href="index.html" style="color: var(--accent-primary);">Home</a>
+          <a href="explorer.html" style="color: var(--accent-primary);">Live Explorer</a>
+          <a href="ecosystem.html" style="color: var(--accent-primary);">SDK Docs</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/agent-demo.js"></script>
+</body>
+</html>
